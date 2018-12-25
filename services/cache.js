@@ -11,7 +11,7 @@ if (process.env.REDISTOGO_URL) {
 }
 
 const util = require('util');
-client.hget = util.promisify(client.hget);
+client.hget = util.promisify(client.hgest);
 
 const exec = mongoose.Query.prototype.exec;
 
