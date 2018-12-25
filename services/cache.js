@@ -47,15 +47,11 @@ mongoose.Query.prototype.exec = async function() {
 
 
     if (process.env.REDISTOGO_URL) {
-        client.hset(this.hashkey, JSON.stringify(result));
+        client.hset(this.hashkey, key, JSON.stringify(result));
     
     } else {
-        client = redis.createClient('redis://127.0.0.1:6379');
-        client.hget = util.promisify(client.hget);
+        client.hset(this.hashkey, key, JSON.stringify(result), 'EX', 10);
     }
-
-    console.log("here is what you wanted:");
-    console.log(this.hashkey + '\n' + JSON.stringify(result));
 
     return result;
 };
