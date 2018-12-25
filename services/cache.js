@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
+const redis = require('redis');
 
 if (process.env.REDISTOGO_URL) {
-    const redisToGo   = require("url").parse(process.env.REDISTOGO_URL);
-    const redis = require("redis").createClient(redisToGo.port, redisToGo.hostname);
-    redis.auth(redisToGo.auth.split(":")[1]);
+    const redisToGo = require("url").parse(process.env.REDISTOGO_URL);
+    const client = redis.createClient(redisToGo.port, redisToGo.hostname);
+    client.auth(redisToGo.auth.split(":")[1]);
 } else {
-    const redis = require('redis');
-    const redisUrl = 'redis://127.0.0.1:6379';
-    const client = redis.createClient(redisUrl);
+    const client = redis.createClient('redis://127.0.0.1:6379');
 }
 
 const util = require('util');
