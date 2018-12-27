@@ -16,16 +16,20 @@ class DayList extends Component {
           <div className="card darken-1 horizontal" key={day._id}>
             <div className="card-stacked">
               <div className="card-content">
-                <span className="card-title">{day.title}</span>
-                <p>{day.content}</p>
+                <span className="cards-title">{day.title}</span>
+                <p className="cards-body">{day.content}</p>
               </div>
-              <div className="card-action">
-                <Link to={`/days/${day._id}`}>Read</Link>
-              </div>
+                <Link to={`/days/${day._id}`}>
+                  <div className="card-action">
+                    <div className="wall">
+                      <span className="card-link">Read Entry</span>
+                    </div>
+                  </div>
+                </Link>
             </div>
           </div>
         );
-      } else null;
+      } else return null;
     });
   }
 

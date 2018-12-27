@@ -15,12 +15,12 @@ class Header extends Component {
         );
       default:
         return [
-          <li key="3" style={{ margin: '0 10px' }}>
+          <li key="3">
             <Link to="/days">My Days</Link>
           </li>,
           <li key="2">
             <Link to="/days/new">
-              <i className="material-icons">add</i>
+              Add Entry
             </Link>
           </li>,
           <li key="1">
@@ -32,7 +32,7 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="indigo">
+      <nav className="header">
         <div className="nav-wrapper">
           <Link
             to={this.props.auth ? '/days' : '/'}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Aleo:300,700');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+
+body {
+    color: rgb(30, 30, 30);
+}
+
+.header {
+    background-color: rgb(127, 69, 137);
+    font-family: 'Aleo', serif;
+    font-weight: 700;
+    margin-bottom: 60px;
+    padding-left: 100px;
+}
+
+.right {
+    font-weight: 300;
+    padding-right: 100px;
+}
+
+.right > li {
+    margin: 0 25px;
+}
+
+.right > li:hover {
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 700px) {
+    .right > li {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .header {
+        padding-left: 40px;
+    }
+
+    .right {
+        padding-right: 40px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .header {
+        margin-bottom: 30px;
+        padding-left: 5px;
+    }
+
+    .right {
+        padding-right: 5px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .header {
+        padding-left: 0px;
+    }
+
+    .right {
+        padding-right: 0px;
+    }
+}
+
+.card .card-content {
+    background-color: rgba(245, 245, 245, 0.25);
+}
+
+.card .card-action {
+    background-color: rgba(215, 215, 215, 0.25);
+}
+
+.card .card-action:hover {
+    background-color: rgba(127, 69, 137, 0.25);
+}
+
+.cards-title {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.cards-body {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+
+.card-link {
+    color: rgb(127, 69, 137);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.card-link:hover {
+    color: rgb(101, 55, 109);
+}
+

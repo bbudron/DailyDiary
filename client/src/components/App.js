@@ -9,7 +9,7 @@ import Dashboard from './Dashboard';
 import DayNew from './days/DayNew';
 import DayShow from './days/DayShow';
 
-import './days/days.css';
+import './style.css';
 
 class App extends Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <BrowserRouter>
           <div>
             <Header />
