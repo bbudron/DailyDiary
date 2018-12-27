@@ -30,7 +30,7 @@ class DayList extends Component {
   }
 
   render() {
-    return <div>{this.renderDays()}</div>;
+    return <div>{this.renderDays()}</div>
   }
 }
 

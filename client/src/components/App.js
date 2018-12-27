@@ -9,6 +9,8 @@ import Dashboard from './Dashboard';
 import DayNew from './days/DayNew';
 import DayShow from './days/DayShow';
 
+import './days/days.css';
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();

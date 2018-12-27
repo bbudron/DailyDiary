@@ -19,6 +19,11 @@ class Header extends Component {
             <Link to="/days">My Days</Link>
           </li>,
           <li key="2">
+            <Link to="/days/new">
+              <i className="material-icons">add</i>
+            </Link>
+          </li>,
+          <li key="1">
             <a href={'/auth/logout'}>Logout</a>
           </li>
         ];
@@ -34,7 +39,7 @@ class Header extends Component {
             className="left brand-logo"
             style={{ marginLeft: '10px' }}
           >
-            Dayster
+            Daily Diary
           </Link>
           <ul className="right">{this.renderContent()}</ul>
         </div>
