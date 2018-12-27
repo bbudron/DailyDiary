@@ -9,7 +9,7 @@ class DayShow extends Component {
 
   renderImage() {
     if(this.props.day.imageUrl) {
-      return <img src={'https://s3.us-east-2.amazonaws.com/daily-diary-bucket/' + this.props.day.imageUrl} alt={this.props.day.title}/>
+      return <img className="images" src={'https://s3.us-east-2.amazonaws.com/daily-diary-bucket/' + this.props.day.imageUrl} alt={this.props.day.title}/>
     }
   }
 

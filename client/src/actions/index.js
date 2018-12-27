@@ -16,16 +16,21 @@ export const handleToken = token => async dispatch => {
 export const submitDay = (values, file, history) => async dispatch => {
   const uploadConfig = await axios.get('/api/upload');
 
+  let key;
+
   if(file != null) {
+    key = uploadConfig.data.key;
     await axios.put(uploadConfig.data.url, file, {
       headers: {
         'Content-Type': file.type
       }
     })
+  } else {
+    key = null;
   }
-  
+
   const res = await axios.post('/api/days', {
-    ...values, imageUrl: uploadConfig.data.key
+    ...values, imageUrl: key
   });
 
   history.push('/days');

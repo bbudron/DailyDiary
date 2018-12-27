@@ -37,7 +37,6 @@ class DayFormReview extends Component {
         </button>
         <button className="green btn-flat right white-text">
           Save Day
-          <i className="material-icons right">email</i>
         </button>
       </div>
     );
@@ -47,7 +46,6 @@ class DayFormReview extends Component {
     event.preventDefault();
 
     const { submitDay, history, formValues } = this.props;
-
     submitDay(formValues, this.state.file, history);
   }
 

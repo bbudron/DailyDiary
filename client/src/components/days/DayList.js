@@ -16,8 +16,12 @@ class DayList extends Component {
           <div className="card darken-1 horizontal" key={day._id}>
             <div className="card-stacked">
               <div className="card-content">
-                <span className="cards-title">{day.title}</span>
-                <p className="cards-body">{day.content}</p>
+                <span className="cards-title">
+                  {(day.title.length > 16) ? (day.title.substring(0,16)+"...") : (day.title) }
+                </span>
+                <p className="cards-body">
+                  {(day.content.length > 30) ? (day.content.substring(0,30)+"...") : (day.content) }
+                </p>
               </div>
                 <Link to={`/days/${day._id}`}>
                   <div className="card-action">
