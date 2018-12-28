@@ -13,6 +13,10 @@ body {
     padding-left: 100px;
 }
 
+.myDays {
+    display: inline;
+}
+
 .right {
     font-weight: 300;
     padding-right: 100px;
@@ -60,6 +64,10 @@ body {
 
     .right {
         padding-right: 0px;
+    }
+
+    .myDays {
+        display: none;
     }
 }
 

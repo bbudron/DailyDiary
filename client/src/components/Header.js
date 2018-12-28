@@ -15,7 +15,7 @@ class Header extends Component {
         );
       default:
         return [
-          <li key="3">
+          <li key="3" className="myDays">
             <Link to="/days">My Days</Link>
           </li>,
           <li key="2">
