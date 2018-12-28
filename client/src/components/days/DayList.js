@@ -10,7 +10,7 @@ class DayList extends Component {
   }
 
   deleteToday({_user, _id, imageUrl}, days) {  
-      const { deleteDay, history, formValues } = this.props;
+      const { deleteDay } = this.props;
       deleteDay(_user, _id, imageUrl, this.props.days);
   }
 

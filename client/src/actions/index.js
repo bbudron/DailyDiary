@@ -53,7 +53,7 @@ export const deleteDay = (_user, _id, imageUrl, days) => async dispatch => {
 
   days = delete days[_id]
 
-  const res = await axios.post('/api/delete', {imageUrl, _id});
+  await axios.post('/api/delete', {imageUrl, _id});
 
   dispatch({ type: DELETE_DAY, payload: days });
 };
