@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_DAYS, FETCH_DAY } from './types';
+import { FETCH_USER, FETCH_DAYS, FETCH_DAY, DELETE_DAY } from './types';
 
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/current_user');
@@ -47,4 +47,13 @@ export const fetchDay = id => async dispatch => {
   const res = await axios.get(`/api/days/${id}`);
 
   dispatch({ type: FETCH_DAY, payload: res.data });
+};
+
+export const deleteDay = (_user, _id, imageUrl, days) => async dispatch => {
+
+  days = delete days[_id]
+
+  const res = await axios.post('/api/delete', {imageUrl, _id});
+
+  dispatch({ type: DELETE_DAY, payload: days });
 };

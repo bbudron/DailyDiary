@@ -69,6 +69,13 @@ body {
 
 .card .card-action {
     background-color: rgba(215, 215, 215, 0.25);
+    min-width: 50%;
+}
+
+.card .card-actions {
+    display: flex;
+    flex-flow: row nowrap;
+    min-width: 100%;
 }
 
 .card .card-action:hover {

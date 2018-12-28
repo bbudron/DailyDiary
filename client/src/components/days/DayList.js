@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import map from 'lodash/map';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchDays } from '../../actions';
+import { fetchDays, deleteDay } from '../../actions';
 
 class DayList extends Component {
   componentDidMount() {
     this.props.fetchDays();
+  }
+
+  deleteToday({_user, _id, imageUrl}, days) {  
+      const { deleteDay, history, formValues } = this.props;
+      deleteDay(_user, _id, imageUrl, this.props.days);
   }
 
   renderDays() {
@@ -23,13 +28,16 @@ class DayList extends Component {
                   {(day.content.length > 30) ? (day.content.substring(0,30)+"...") : (day.content) }
                 </p>
               </div>
-                <Link to={`/days/${day._id}`}>
-                  <div className="card-action">
-                    <div className="wall">
-                      <span className="card-link">Read Entry</span>
-                    </div>
-                  </div>
+
+              <div className="card-actions">
+                <Link to={`/days/${day._id}`} className="card-action">
+                    <span className="card-link">Read Entry</span>
                 </Link>
+
+                <div className="card-action" onClick={() => this.deleteToday(day)}>
+                    <span className="card-link">Delete Entry</span>
+                </div>      
+              </div>
             </div>
           </div>
         );
@@ -46,4 +54,4 @@ function mapStateToProps({ days }) {
   return { days };
 }
 
-export default connect(mapStateToProps, { fetchDays })(DayList);
+export default connect(mapStateToProps, { fetchDays, deleteDay })(DayList);

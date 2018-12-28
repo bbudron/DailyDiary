@@ -1,5 +1,5 @@
 import mapKeys from 'lodash/mapKeys';
-import { FETCH_DAYS, FETCH_DAY } from '../actions/types';
+import { FETCH_DAYS, FETCH_DAY, DELETE_DAY } from '../actions/types';
 
 export default function(state = {}, action) {
   switch (action.type) {
@@ -7,6 +7,8 @@ export default function(state = {}, action) {
       const day = action.payload;
       return { ...state, [day._id]: day };
     case FETCH_DAYS:
+      return { ...state, ...mapKeys(action.payload, '_id') };
+    case DELETE_DAY:
       return { ...state, ...mapKeys(action.payload, '_id') };
     default:
       return state;
