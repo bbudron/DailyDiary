@@ -26,13 +26,16 @@ class DayForm extends Component {
       <div>
         <form onSubmit={this.props.handleSubmit(this.props.onDaySubmit)}>
           {this.renderFields()}
-          <Link to="/days" className="red btn-flat white-text">
-            Cancel
-          </Link>
-          <button type="submit" className="teal btn-flat right white-text">
-            Next
-            <i className="material-icons right">done</i>
-          </button>
+          <div className="card">
+            <div className="card-actions">
+              <Link to="/days" className="card-action">
+                <span className="card-link">Cancel</span>
+              </Link>
+              <button type="submit" className="card-action">
+                <span className="card-link">Done</span>
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     );

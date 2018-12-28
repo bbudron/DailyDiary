@@ -28,16 +28,19 @@ class DayFormReview extends Component {
     const { onCancel } = this.props;
 
     return (
-      <div>
+      <div className="card">
+      <div className="card-actions">
         <button
-          className="yellow darken-3 white-text btn-flat"
+          className="card-action"
           onClick={onCancel}
         >
-          Back
+          <span className="card-link">Back</span>
         </button>
-        <button className="green btn-flat right white-text">
-          Save Day
+
+        <button className="card-action">
+          <span className="card-link">Save Day</span>
         </button>
+      </div>
       </div>
     );
   }
