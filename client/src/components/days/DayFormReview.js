@@ -8,7 +8,8 @@ import * as actions from '../../actions';
 
 class DayFormReview extends Component {
   state = {
-    file: null
+    file: null,
+    uploading: false
   }
 
   renderFields() {
@@ -47,7 +48,7 @@ class DayFormReview extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-
+    this.setState({uploading: true})
     const { submitDay, history, formValues } = this.props;
     submitDay(formValues, this.state.file, history);
   }
@@ -66,6 +67,16 @@ class DayFormReview extends Component {
         <input type="file" accept="image/*" onChange={this.onFileChange.bind(this)}/>
 
         {this.renderButtons()}
+
+        <div className="row" id={this.state.uploading ? "alert_box1" : "alert_box2"}>
+          <div className="col s12 m12">
+            <div className="card blue darken-1">
+                  <div className="card-content white-text">
+                    <p>one moment please...</p>
+                  </div>
+            </div>
+          </div>
+        </div>
       </form>
     );
   }

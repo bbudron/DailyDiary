@@ -135,3 +135,20 @@ body {
     max-width: 100%;
     word-wrap: break-word;
 }
+
+#alert_box1 {
+    display: block;
+}
+
+#alert_box2 {
+    display: none;
+}
+
+.icon_style{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    cursor:pointer; 
+    }
